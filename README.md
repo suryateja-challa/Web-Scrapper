@@ -1,2 +1,2 @@
-# Web-Scrapper
-Web scrapper using Python
+# Web Scrapper
+A basic project on web scrapping usig Python.
