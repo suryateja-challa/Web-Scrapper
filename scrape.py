@@ -1,7 +1,16 @@
 import requests
 from bs4 import BeautifulSoup as bs
 
-response = requests.get('https://news.ycombinator.com/news')
-soup = bs(response.text, 'html.parser')
+url = 'https://news.ycombinator.com/news'
 
-print(soup.select('.titleline'))
+links = []
+website = requests.get(url)
+
+soup = bs(website.text, features='html.parser')
+
+for link in soup.find_all('a'):
+    links.append(link.getText('href'))
+
+for link in links:
+    print(link)
+
